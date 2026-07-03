@@ -1,6 +1,6 @@
-# CodeChef SQL Practice Queries
+# Basic Commands
 
-This file tracks my progress and solutions for the SQL practice modules on CodeChef. Each problem statement is documented alongside its verified query and output schema.
+This file tracks my progress and solutions for the Basic Commands of the SQL practice modules on CodeChef. Each problem statement is documented alongside its verified query and output schema.
 
 ---
 
