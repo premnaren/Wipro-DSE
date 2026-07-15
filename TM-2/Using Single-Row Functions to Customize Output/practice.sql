@@ -7,43 +7,43 @@ ALTER SESSION SET CONTAINER = FREEPDB1;
 
 -- UPPER
 -- Syntax: UPPER(char_expression)
-SELECT UPPER('aruna sri') AS name FROM dual;
+SELECT UPPER('premnaren') AS name FROM dual;
 
 -- UPPER WITH ALIAS
 -- Syntax: UPPER(char_expression)
-SELECT UPPER('aruna sri') AS Name FROM dual;
+SELECT UPPER('premnaren') AS Name FROM dual;
 
 -- LOWER
 -- Syntax: LOWER(char_expression)
-SELECT LOWER('ARUNA SRI') AS Name FROM dual;
+SELECT LOWER('PREMNAREN') AS Name FROM dual;
 
 -- INITCAP
 -- Syntax: INITCAP(char_expression)
-SELECT INITCAP('aruna sri') AS Name FROM dual;
+SELECT INITCAP('premnaren') AS Name FROM dual;
 
 -- LENGTH
 -- Syntax: LENGTH(char_expression)
-SELECT LENGTH('aruna sri') AS Name_of_the_length FROM dual;
+SELECT LENGTH('premnaren') AS Name_of_the_length FROM dual;
 
 -- SUBSTR
 -- Syntax: SUBSTR(char_expression, start_position [, length_to_extract])
-SELECT SUBSTR('aruna sri', 3, 8) AS sub_string FROM dual;
+SELECT SUBSTR('premnaren', 3, 8) AS sub_string FROM dual;
 
 -- INSTR
 -- Syntax: INSTR(string, search_substring [, start_position [, occurrence_index]])
-SELECT INSTR('aruna sri', 's') AS in_string FROM dual;
+SELECT INSTR('premnaren', 'n') AS in_string FROM dual;
 
 -- CONCAT
 -- Syntax: CONCAT(char_expression1, char_expression2)
-SELECT CONCAT('aruna sri', 'sumaya chandran') AS FULLNAME FROM dual;
+SELECT CONCAT('premnaren', 'sumaya chandran') AS FULLNAME FROM dual;
 
 -- CONCAT WITH SPACE
 -- Syntax: CONCAT(char_expression1, char_expression2)
-SELECT CONCAT('aruna sri', ' sumaya chandran') AS FULLNAME FROM dual;
+SELECT CONCAT('premnaren', ' sumaya chandran') AS FULLNAME FROM dual;
 
 -- REPLACE
 -- Syntax: REPLACE(char_expression, search_string [, replacement_string])
-SELECT REPLACE('ARUNA', 'A', 'X') FROM dual;
+SELECT REPLACE('PREMNAREN', 'P', 'X') FROM dual;
 
 -- LPAD (TRUNCATING CASE)
 -- Syntax: LPAD(char_expression, total_padded_length [, 'padding_character'])

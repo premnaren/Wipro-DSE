@@ -1,3 +1,4 @@
+ALTER SESSION SET CONTAINER = FREEPDB1;
 DESC hr.departments;
 SELECT * FROM hr.departments;
 
