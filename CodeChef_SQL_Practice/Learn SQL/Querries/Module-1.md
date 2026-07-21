@@ -1,173 +1,176 @@
-# ✈️ Sub-Module 1: Introduction to Queries
+# SQL Fundamentals — Sub-Module 1: Introduction to Queries
 
-This document contains the complete solutions for **Sub-Module 1:
-Introduction to Queries**.
-
-### 📋 Initial Table (`Flights`)
-
-  Passenger_id   Passenger_name   Gender   Origin     Destination
-  -------------- ---------------- -------- ---------- -------------
-  10001          Jackson          Male     Mumbai     New York
-  10002          Riya             Female   Mumbai     Delhi
-  10003          Roy              Male     London     Delhi
-  10004          Anthony          Male     Mumbai     Cairo
-  10005          Salim            Male     Ohio       New York
-  10006          Dia              Female   New York   Cairo
-  10007          Jackson          Male     New York   London
-  10008          Dia              Female   Beijing    Mumbai
-  10009          Riya             Female   Damascus   Mumbai
-  10010          Betty            Female   Beijing    Cairo
+Core `SELECT` syntax — column selection, `DISTINCT`, `WHERE` filtering, `BETWEEN` ranges, and compound conditions — worked against a single reference table.
 
 ---
 
-# 1. Display all records
+## Reference Table — `Flights`
 
-## ❓ Question
+| Passenger_id | Passenger_name | Gender | Origin   | Destination |
+|:------------:|:---------------|:------:|:---------|:------------|
+| 10001 | Jackson | Male   | Mumbai   | New York |
+| 10002 | Riya    | Female | Mumbai   | Delhi |
+| 10003 | Roy     | Male   | London   | Daelhi |
+| 10004 | Anthony | Male   | Mumbai   | Cairo |
+| 10005 | Salim   | Male   | Ohio     | New York |
+| 10006 | Dia     | Female | New York | Cairo |
+| 10007 | Jackson | Male   | New York | London |
+| 10008 | Dia     | Female | Beijing  | Mumbai |
+| 10009 | Riya    | Female | Damascus | Mumbai |
+| 10010 | Betty   | Female | Beijing  | Cairo |
 
-Display all records from the `Flights` table.
+---
 
-``` sql
+## Query 01 — Display All Records
+
+**Question:** Display all records from the `Flights` table.
+
+```sql
 SELECT * FROM Flights;
 ```
 
-### 📤 Output
+**Output:** Returns all columns for all 10 rows.
 
-Displays all 10 rows.
+> **10 rows returned**
 
 ---
 
-# 2. Select Specific Columns
+## Query 02 — Select Specific Columns
 
-## ❓ Question
+**Question:** Display only the `Passenger_name` and `Gender` columns.
 
-Display only the `Passenger_name` and `Gender` columns.
-
-``` sql
+```sql
 SELECT Passenger_name, Gender
 FROM Flights;
 ```
 
-### 📤 Output
+**Output:**
 
-  Passenger_name   Gender
-  ---------------- --------
-  Jackson          Male
-  Riya             Female
-  Roy              Male
-  Anthony          Male
-  Salim            Male
-  Dia              Female
-  Jackson          Male
-  Dia              Female
-  Riya             Female
-  Betty            Female
+| Passenger_name | Gender |
+|:----------------|:-------|
+| Jackson | Male |
+| Riya    | Female |
+| Roy     | Male |
+| Anthony | Male |
+| Salim   | Male |
+| Dia     | Female |
+| Jackson | Male |
+| Dia     | Female |
+| Riya    | Female |
+| Betty   | Female |
+
+> **10 rows returned**
 
 ---
 
-# 3. DISTINCT Clause
+## Query 03 — `DISTINCT` Clause
 
-## ❓ Question
+**Question:** Display all unique origin locations.
 
-Display all unique origin locations.
-
-``` sql
+```sql
 SELECT DISTINCT Origin
 FROM Flights;
 ```
 
-### 📤 Output
+**Output:**
 
-  Origin
-  ----------
-  Mumbai
-  London
-  Ohio
-  New York
-  Beijing
-  Damascus
+| Origin |
+|:-------|
+| Mumbai |
+| London |
+| Ohio |
+| New York |
+| Beijing |
+| Damascus |
+
+> **6 rows returned**
 
 ---
 
-# 4. WHERE Clause
+## Query 04 — `WHERE` Clause
 
-## ❓ Question
+**Question:** Display all passengers whose Origin is Mumbai.
 
-Display all passengers whose Origin is Mumbai.
-
-``` sql
+```sql
 SELECT *
 FROM Flights
 WHERE Origin='Mumbai';
 ```
 
-### 📤 Output
+**Output:**
 
-  Passenger_id   Passenger_name   Gender   Origin   Destination
-  -------------- ---------------- -------- -------- -------------
-  10001          Jackson          Male     Mumbai   New York
-  10002          Riya             Female   Mumbai   Delhi
-  10004          Anthony          Male     Mumbai   Cairo
+| Passenger_id | Passenger_name | Gender | Origin | Destination |
+|:------------:|:----------------|:------:|:-------|:------------|
+| 10001 | Jackson | Male   | Mumbai | New York |
+| 10002 | Riya    | Female | Mumbai | Delhi |
+| 10004 | Anthony | Male   | Mumbai | Cairo |
+
+> **3 rows returned**
 
 ---
 
-# 5. BETWEEN Clause
+## Query 05 — `BETWEEN` Clause
 
-## ❓ Question
+**Question:** Display passengers whose names fall alphabetically between 'A' and 'D'.
 
-Display passengers whose names fall alphabetically between 'A' and 'D'.
-
-``` sql
+```sql
 SELECT *
 FROM Flights
 WHERE Passenger_name BETWEEN 'A' AND 'D';
 ```
 
-### 📤 Output
+**Output:**
 
-  Passenger_id   Passenger_name   Gender   Origin    Destination
-  -------------- ---------------- -------- --------- -------------
-  10004          Anthony          Male     Mumbai    Cairo
-  10010          Betty            Female   Beijing   Cairo
+| Passenger_id | Passenger_name | Gender | Origin  | Destination |
+|:------------:|:----------------|:------:|:--------|:------------|
+| 10004 | Anthony | Male   | Mumbai  | Cairo |
+| 10010 | Betty   | Female | Beijing | Cairo |
+
+> **2 rows returned**
 
 ---
 
-# 6. Practice - Basic WHERE Query
+## Query 06 — Practice: Basic `WHERE` Query
 
-## ❓ Question
+**Question:** Display the `Passenger_name` and `Gender` where Origin is New York.
 
-Display the `Passenger_name` and `Gender` where Origin is New York.
-
-``` sql
+```sql
 SELECT Passenger_name, Gender
 FROM Flights
 WHERE Origin='New York';
 ```
 
-### 📤 Output
+**Output:**
 
-  Passenger_name   Gender
-  ---------------- --------
-  Dia              Female
-  Jackson          Male
+| Passenger_name | Gender |
+|:----------------|:-------|
+| Dia     | Female |
+| Jackson | Male |
+
+> **2 rows returned**
 
 ---
 
-# 7. Practice - Debug this Query
+## Query 07 — Practice: Debug This Query
 
-## ❓ Question
+**Question:** Display distinct male passenger names whose origin is Mumbai.
 
-Display distinct male passenger names whose origin is Mumbai.
-
-``` sql
+```sql
 SELECT DISTINCT Passenger_name
 FROM Flights
 WHERE Gender='Male'
 AND Origin='Mumbai';
 ```
 
-### 📤 Output
+**Output:**
 
-  Passenger_name
-  ----------------
-  Jackson
-  Anthony
+| Passenger_name |
+|:----------------|
+| Jackson |
+| Anthony |
+
+> **2 rows returned**
+
+---
+
+*SQL Fundamentals · Module 1 · 7 queries*

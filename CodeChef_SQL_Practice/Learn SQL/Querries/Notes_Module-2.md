@@ -1,20 +1,16 @@
-# 📒 Module 2 Notes - WHERE Conditional Statements
+# SQL Fundamentals — Module 2 Notes: WHERE Conditional Statements
 
 ## Topics Covered
 
--   AND Operator
--   OR Operator
--   LIKE Operator
--   Wildcards (`%` and `_`)
--   Combining Conditions
+`AND` Operator · `OR` Operator · `LIKE` Operator · Wildcards (`%` and `_`) · Combining Conditions
 
 ---
 
-# 1. AND Operator
+## 1. AND Operator
 
 Returns rows only if **all conditions** are true.
 
-``` sql
+```sql
 SELECT *
 FROM Flights
 WHERE Gender='Female'
@@ -23,11 +19,11 @@ AND Destination='Cairo';
 
 ---
 
-# 2. OR Operator
+## 2. OR Operator
 
 Returns rows if **at least one** condition is true.
 
-``` sql
+```sql
 SELECT *
 FROM Flights
 WHERE Origin='Mumbai'
@@ -36,47 +32,45 @@ OR Destination='Mumbai';
 
 ---
 
-# 3. LIKE Operator
+## 3. LIKE Operator
 
 Used for pattern matching.
 
-## `%` Wildcard
+### `%` Wildcard
 
 Represents **zero or more characters**.
 
-Starts with M:
+**Starts with M:**
 
-``` sql
+```sql
 WHERE Origin LIKE 'M%';
 ```
 
-Ends with a:
+**Ends with a:**
 
-``` sql
+```sql
 WHERE Passenger_name LIKE '%a';
 ```
 
-Contains 'ork':
+**Contains 'ork':**
 
-``` sql
+```sql
 WHERE Origin LIKE '%ork%';
 ```
 
----
-
-## `_` Wildcard
+### `_` Wildcard
 
 Represents **exactly one character**.
 
-``` sql
+```sql
 WHERE Passenger_id LIKE '1000_';
 ```
 
 ---
 
-# Combining LIKE with AND
+## Combining LIKE with AND
 
-``` sql
+```sql
 SELECT *
 FROM Flights
 WHERE Destination LIKE '%o'
@@ -85,22 +79,17 @@ AND Origin LIKE 'M%';
 
 ---
 
-# SQL Keywords Learned
+## SQL Keywords Learned
 
--   WHERE
--   AND
--   OR
--   LIKE
--   \%
--   \_
+`WHERE` · `AND` · `OR` · `LIKE` · `%` · `_`
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
--   `AND` requires every condition to be true.
--   `OR` requires at least one condition to be true.
--   `LIKE` performs pattern matching.
--   `%` matches any number of characters.
--   `_` matches a single character.
--   Complex filters can combine `LIKE`, `AND`, and `OR`.
+- `AND` requires every condition to be true.
+- `OR` requires at least one condition to be true.
+- `LIKE` performs pattern matching.
+- `%` matches any number of characters.
+- `_` matches a single character.
+- Complex filters can combine `LIKE`, `AND`, and `OR`.
