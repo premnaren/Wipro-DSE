@@ -1,58 +1,53 @@
-# 📒 Module 4 Notes -- SUM, AVG, GROUP BY & HAVING
+# SQL Fundamentals — Module 2 Notes: SUM, AVG, GROUP BY & HAVING
 
 ## Topics Covered
 
--   SUM()
--   AVG()
--   GROUP BY
--   HAVING
--   ORDER BY with GROUP BY
--   Aggregate filtering
+`SUM()` · `AVG()` · `GROUP BY` · `HAVING` · `ORDER BY` with `GROUP BY` · Aggregate filtering
 
-------------------------------------------------------------------------
+---
 
-# SUM()
+## SUM()
 
 Returns the total of a numeric column.
 
-``` sql
+```sql
 SELECT SUM(Payout)
 FROM employee;
 ```
 
-------------------------------------------------------------------------
+---
 
-# AVG()
+## AVG()
 
 Returns the arithmetic mean.
 
-``` sql
+```sql
 SELECT AVG(Payout)
 FROM employee;
 ```
 
-------------------------------------------------------------------------
+---
 
-# GROUP BY
+## GROUP BY
 
 Groups rows having the same value before applying aggregate functions.
 
-``` sql
+```sql
 SELECT Department,
        AVG(Payout)
 FROM employee
 GROUP BY Department;
 ```
 
-Common aggregates: - COUNT() - SUM() - AVG() - MAX() - MIN()
+**Common aggregates:** `COUNT()` · `SUM()` · `AVG()` · `MAX()` · `MIN()`
 
-------------------------------------------------------------------------
+---
 
-# HAVING
+## HAVING
 
 Filters **groups**, unlike `WHERE`, which filters individual rows.
 
-``` sql
+```sql
 SELECT Department,
        AVG(Payout)
 FROM employee
@@ -60,26 +55,21 @@ GROUP BY Department
 HAVING COUNT(*) > 3;
 ```
 
-------------------------------------------------------------------------
+---
 
-# WHERE vs HAVING
+## WHERE vs HAVING
 
-  -----------------------------------------------------------------------
-  WHERE                             HAVING
-  --------------------------------- -------------------------------------
-  Filters rows                      Filters groups
+| | WHERE | HAVING |
+|:---|:------|:-------|
+| **Filters** | Rows | Groups |
+| **Timing** | Before grouping | After grouping |
+| **Aggregate functions** | Cannot use directly | Designed for aggregate conditions |
 
-  Before grouping                   After grouping
+---
 
-  Cannot use aggregate functions    Designed for aggregate conditions
-  directly                          
-  -----------------------------------------------------------------------
+## ORDER BY with GROUP BY
 
-------------------------------------------------------------------------
-
-# ORDER BY with GROUP BY
-
-``` sql
+```sql
 SELECT Department,
        AVG(Payout)
 FROM employee
@@ -87,30 +77,26 @@ GROUP BY Department
 ORDER BY Department;
 ```
 
-------------------------------------------------------------------------
+---
 
-# SQL Keywords Learned
+## SQL Keywords Learned
 
--   SUM()
--   AVG()
--   GROUP BY
--   HAVING
--   ORDER BY
+`SUM()` · `AVG()` · `GROUP BY` · `HAVING` · `ORDER BY`
 
-------------------------------------------------------------------------
+---
 
-# Best Practices
+## Best Practices
 
--   Use `WHERE` to filter rows before grouping.
--   Use `HAVING` to filter grouped results.
--   Always alias aggregate columns.
--   Group every non-aggregated selected column.
+- Use `WHERE` to filter rows before grouping.
+- Use `HAVING` to filter grouped results.
+- Always alias aggregate columns.
+- Group every non-aggregated selected column.
 
-------------------------------------------------------------------------
+---
 
-# Cheat Sheet
+## Cheat Sheet
 
-``` sql
+```sql
 SELECT SUM(column) FROM table;
 
 SELECT AVG(column) FROM table;

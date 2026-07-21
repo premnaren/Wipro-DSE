@@ -1,56 +1,52 @@
-# 📘 Module 4: SUM, AVG, GROUP BY & HAVING
+# SQL Fundamentals — Module 2: SUM, AVG, GROUP BY & HAVING
 
-This document contains the complete solutions for **Module 4 --
-Aggregate Functions (Advanced)**.
+Aggregate functions across groups — `SUM()`, `AVG()`, `GROUP BY`, and `HAVING` — worked against an `employee` table.
 
-------------------------------------------------------------------------
+---
 
-# 1. SUM()
+## Query 01 — `SUM()`
 
-## ❓ Question
+**Question:** Find the sum of the `Payout` column from the `EMPLOYEE` table and rename the result as **total_payout**.
 
-Find the sum of the `Payout` column from the `EMPLOYEE` table and rename
-the result as **total_payout**.
-
-``` sql
+```sql
 SELECT SUM(Payout) AS total_payout
 FROM EMPLOYEE;
 ```
 
-### 📤 Output
+**Output:**
 
-    total_payout
-  --------------
-         155.339
+| total_payout |
+|:------------:|
+| 155.339 |
 
-------------------------------------------------------------------------
+> **1 row returned**
 
-# 2. AVG()
+---
 
-## ❓ Question
+## Query 02 — `AVG()`
 
-Find the average value of the `Payout` column and rename it as
-**avg_payout**.
+**Question:** Find the average value of the `Payout` column and rename it as **avg_payout**.
 
-``` sql
+```sql
 SELECT AVG(Payout) AS avg_payout
 FROM employee;
 ```
 
-### 📤 Output
+**Output:**
 
-    avg_payout
-  ------------
-       15.5339
+| avg_payout |
+|:----------:|
+| 15.5339 |
 
-------------------------------------------------------------------------
+> **1 row returned**
 
-# 3. Practice -- SUM() and AVG()
+---
 
-Calculate: - Total payout for the **Product** department. - Average
-payout for the **Operations** department.
+## Query 03 — Practice: `SUM()` and `AVG()`
 
-``` sql
+**Question:** Calculate the total payout for the **Product** department, and the average payout for the **Operations** department.
+
+```sql
 SELECT SUM(Payout) AS product_total_pay
 FROM Employee
 WHERE Department='Product';
@@ -60,46 +56,47 @@ FROM Employee
 WHERE Department='Operations';
 ```
 
-### 📤 Output
+**Output:**
 
-    product_total_pay
-  -------------------
-               20.528
+| product_total_pay |
+|:------------------:|
+| 20.528 |
 
-    ops_avg_pay
-  -------------
-       12.41975
+| ops_avg_pay |
+|:-----------:|
+| 12.41975 |
 
-------------------------------------------------------------------------
+---
 
-# 4. GROUP BY
+## Query 04 — `GROUP BY`
 
-Calculate the average payout for each department.
+**Question:** Calculate the average payout for each department.
 
-``` sql
+```sql
 SELECT Department,
        AVG(Payout) AS avg_payout
 FROM employee
 GROUP BY Department;
 ```
 
-### 📤 Output
+**Output:**
 
-  Department     avg_payout
-  ------------ ------------
-  HR                 21.957
-  Operations       12.41975
-  Product            10.264
-  Sales              20.609
+| Department | avg_payout |
+|:-----------|:----------:|
+| HR | 21.957 |
+| Operations | 12.41975 |
+| Product | 10.264 |
+| Sales | 20.609 |
 
-------------------------------------------------------------------------
+> **4 rows returned**
 
-# 5. HAVING
+---
 
-Display departments having **more than 3 employees** and show their
-average payout.
+## Query 05 — `HAVING`
 
-``` sql
+**Question:** Display departments having **more than 3 employees** and show their average payout.
+
+```sql
 SELECT Department,
        AVG(Payout) AS avg_payout
 FROM employee
@@ -107,21 +104,22 @@ GROUP BY Department
 HAVING COUNT(*) > 3;
 ```
 
-### 📤 Output
+**Output:**
 
-  Department     avg_payout
-  ------------ ------------
-  Operations         11.227
-  Sales            20.34625
+| Department | avg_payout |
+|:-----------|:----------:|
+| Operations | 11.227 |
+| Sales | 20.34625 |
 
-------------------------------------------------------------------------
+> **2 rows returned**
 
-# 6. Practice -- GROUP BY & HAVING
+---
 
-Display: - Department - Average payout Only for departments where the
-total payout is greater than **40**. Sort the output by department.
+## Query 06 — Practice: `GROUP BY` & `HAVING`
 
-``` sql
+**Question:** Display department and average payout, only for departments where the total payout is greater than **40**. Sort the output by department.
+
+```sql
 SELECT Department,
        AVG(Payout) AS avg_payout
 FROM employee
@@ -130,22 +128,23 @@ HAVING SUM(Payout) > 40
 ORDER BY Department;
 ```
 
-### 📤 Output
+**Output:**
 
-  Department           avg_payout
-  ------------ ------------------
-  HR             23.9886666666667
-  Operations               11.227
-  Sales                  20.34625
+| Department | avg_payout |
+|:-----------|:-----------------:|
+| HR | 23.9886666666667 |
+| Operations | 11.227 |
+| Sales | 20.34625 |
 
-------------------------------------------------------------------------
+> **3 rows returned**
 
-# 7. Debug this Query
+---
 
-Find the average age of employees department-wise, only for departments
-having more than three employees.
+## Query 07 — Debug This Query
 
-``` sql
+**Question:** Find the average age of employees department-wise, only for departments having more than three employees.
+
+```sql
 SELECT Department,
        AVG(Age) AS avg_age
 FROM employee
@@ -153,9 +152,15 @@ GROUP BY Department
 HAVING COUNT(Department) > 3;
 ```
 
-### 📤 Output
+**Output:**
 
-  Department     avg_age
-  ------------ ---------
-  Operations        23.0
-  Sales             20.5
+| Department | avg_age |
+|:-----------|:-------:|
+| Operations | 23.0 |
+| Sales | 20.5 |
+
+> **2 rows returned**
+
+---
+
+*SQL Fundamentals · Module 4 · 7 queries*

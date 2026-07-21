@@ -1,117 +1,114 @@
-# 📒 Module 3 Notes -- Aggregate Functions
+# SQL Fundamentals — Module 1 Notes: Aggregate Functions
 
 ## Aggregate Functions
 
-Aggregate functions perform calculations on multiple rows and return a
-**single result**.
+Aggregate functions perform calculations on multiple rows and return a **single result**.
 
-Common aggregate functions: - COUNT() - MAX() - MIN() - SUM() - AVG() -
-ROUND()
+Common aggregate functions: `COUNT()` · `MAX()` · `MIN()` · `SUM()` · `AVG()` · `ROUND()`
 
-------------------------------------------------------------------------
+---
 
-# AS (Alias)
+## AS (Alias)
 
 Rename a column in the output.
 
-``` sql
+```sql
 SELECT employee_name AS Name
 FROM employee;
 ```
 
-Aliases only affect the displayed result.
+> Aliases only affect the displayed result.
 
-------------------------------------------------------------------------
+---
 
-# COUNT()
+## COUNT()
 
 Counts rows.
 
-``` sql
+```sql
 SELECT COUNT(*) FROM employee;
 ```
 
 Count non-null values in a column:
 
-``` sql
+```sql
 SELECT COUNT(email)
 FROM employee;
 ```
 
--   `COUNT(*)` counts every row.
--   `COUNT(column)` ignores NULL values.
+- `COUNT(*)` counts every row.
+- `COUNT(column)` ignores NULL values.
 
-------------------------------------------------------------------------
+---
 
-# MAX()
+## MAX()
 
 Returns the largest value.
 
-``` sql
+```sql
 SELECT MAX(Hourly_pay)
 FROM employee;
 ```
 
-------------------------------------------------------------------------
+---
 
-# MIN()
+## MIN()
 
 Returns the smallest value.
 
-``` sql
+```sql
 SELECT MIN(Hourly_pay)
 FROM employee;
 ```
 
-------------------------------------------------------------------------
+---
 
-# ROUND()
+## ROUND()
 
 Rounds numeric values.
 
-``` sql
+```sql
 SELECT ROUND(Payout,2)
 FROM employee;
 ```
 
-Examples: - `ROUND(12.3456,2)` → **12.35** - `ROUND(18.999,1)` →
-**19.0**
+**Examples**
 
-------------------------------------------------------------------------
+| Expression | Result |
+|:-----------|:------:|
+| `ROUND(12.3456,2)` | 12.35 |
+| `ROUND(18.999,1)` | 19.0 |
 
-# Combining Aggregate Functions with WHERE
+---
 
-``` sql
+## Combining Aggregate Functions with WHERE
+
+```sql
 SELECT MAX(Hourly_pay)
 FROM employee
 WHERE Department='Operations';
 ```
 
-------------------------------------------------------------------------
+---
 
-# SQL Keywords Learned
+## SQL Keywords Learned
 
--   AS
--   COUNT()
--   MAX()
--   MIN()
--   ROUND()
--   WHERE
+`AS` · `COUNT()` · `MAX()` · `MIN()` · `ROUND()` · `WHERE`
 
-------------------------------------------------------------------------
+---
 
-# Best Practices
+## Best Practices
 
--   Always use aliases for aggregate results.
--   Filter with `WHERE` before applying aggregate functions.
--   Use `COUNT(*)` when you need the total row count.
--   Use `ROUND()` for financial values.
+- Always use aliases for aggregate results.
+- Filter with `WHERE` before applying aggregate functions.
+- Use `COUNT(*)` when you need the total row count.
+- Use `ROUND()` for financial values.
 
-------------------------------------------------------------------------
+---
 
-# Quick Cheat Sheet
+## Quick Cheat Sheet
 
-``` sql
+```sql
 SELECT COUNT(*) FROM table;
 
 SELECT MAX(column) FROM table;
