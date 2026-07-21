@@ -3,7 +3,7 @@
 This document contains the complete solutions for **Module 2 -- WHERE:
 Conditional Statements**.
 
-## 📋 Flights Table
+### 📋 Initial Table (`Flights`)
 
   Passenger_id   Passenger_name   Gender   Origin     Destination
   -------------- ---------------- -------- ---------- -------------
@@ -18,7 +18,7 @@ Conditional Statements**.
   10009          Riya             Female   Damascus   Mumbai
   10010          Betty            Female   Beijing    Cairo
 
-------------------------------------------------------------------------
+---
 
 # 1. AND Operator
 
@@ -40,7 +40,7 @@ AND Destination='Cairo';
   10006          Dia              Female   New York   Cairo
   10010          Betty            Female   Beijing    Cairo
 
-------------------------------------------------------------------------
+---
 
 # 2. OR Operator
 
@@ -66,7 +66,7 @@ OR Destination='Mumbai';
   10008          Dia              Female   Beijing    Mumbai
   10009          Riya             Female   Damascus   Mumbai
 
-------------------------------------------------------------------------
+---
 
 # 3. LIKE Operator
 
@@ -89,7 +89,7 @@ WHERE Passenger_name LIKE '%a';
   10008          Dia              Female   Beijing    Mumbai
   10009          Riya             Female   Damascus   Mumbai
 
-------------------------------------------------------------------------
+---
 
 # 4. Practice - Multiple LIKE Patterns
 
@@ -111,7 +111,7 @@ AND Origin LIKE 'M%';
   -------------- ---------------- -------- -------- -------------
   10004          Anthony          Male     Mumbai   Cairo
 
-------------------------------------------------------------------------
+---
 
 # 5. Practice - Debug this Query
 

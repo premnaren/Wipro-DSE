@@ -3,7 +3,7 @@
 This document contains the complete solutions for **Sub-Module 1:
 Introduction to Queries**.
 
-## 📋 Flights Table
+### 📋 Initial Table (`Flights`)
 
   Passenger_id   Passenger_name   Gender   Origin     Destination
   -------------- ---------------- -------- ---------- -------------
@@ -18,11 +18,11 @@ Introduction to Queries**.
   10009          Riya             Female   Damascus   Mumbai
   10010          Betty            Female   Beijing    Cairo
 
-------------------------------------------------------------------------
+---
 
 # 1. Display all records
 
-## Question
+## ❓ Question
 
 Display all records from the `Flights` table.
 
@@ -30,15 +30,15 @@ Display all records from the `Flights` table.
 SELECT * FROM Flights;
 ```
 
-### Output
+### 📤 Output
 
 Displays all 10 rows.
 
-------------------------------------------------------------------------
+---
 
 # 2. Select Specific Columns
 
-## Question
+## ❓ Question
 
 Display only the `Passenger_name` and `Gender` columns.
 
@@ -47,7 +47,7 @@ SELECT Passenger_name, Gender
 FROM Flights;
 ```
 
-### Output
+### 📤 Output
 
   Passenger_name   Gender
   ---------------- --------
@@ -62,11 +62,11 @@ FROM Flights;
   Riya             Female
   Betty            Female
 
-------------------------------------------------------------------------
+---
 
 # 3. DISTINCT Clause
 
-## Question
+## ❓ Question
 
 Display all unique origin locations.
 
@@ -75,7 +75,7 @@ SELECT DISTINCT Origin
 FROM Flights;
 ```
 
-### Output
+### 📤 Output
 
   Origin
   ----------
@@ -86,11 +86,11 @@ FROM Flights;
   Beijing
   Damascus
 
-------------------------------------------------------------------------
+---
 
 # 4. WHERE Clause
 
-## Question
+## ❓ Question
 
 Display all passengers whose Origin is Mumbai.
 
@@ -100,7 +100,7 @@ FROM Flights
 WHERE Origin='Mumbai';
 ```
 
-### Output
+### 📤 Output
 
   Passenger_id   Passenger_name   Gender   Origin   Destination
   -------------- ---------------- -------- -------- -------------
@@ -108,11 +108,11 @@ WHERE Origin='Mumbai';
   10002          Riya             Female   Mumbai   Delhi
   10004          Anthony          Male     Mumbai   Cairo
 
-------------------------------------------------------------------------
+---
 
 # 5. BETWEEN Clause
 
-## Question
+## ❓ Question
 
 Display passengers whose names fall alphabetically between 'A' and 'D'.
 
@@ -122,18 +122,18 @@ FROM Flights
 WHERE Passenger_name BETWEEN 'A' AND 'D';
 ```
 
-### Output
+### 📤 Output
 
   Passenger_id   Passenger_name   Gender   Origin    Destination
   -------------- ---------------- -------- --------- -------------
   10004          Anthony          Male     Mumbai    Cairo
   10010          Betty            Female   Beijing   Cairo
 
-------------------------------------------------------------------------
+---
 
 # 6. Practice - Basic WHERE Query
 
-## Question
+## ❓ Question
 
 Display the `Passenger_name` and `Gender` where Origin is New York.
 
@@ -143,18 +143,18 @@ FROM Flights
 WHERE Origin='New York';
 ```
 
-### Output
+### 📤 Output
 
   Passenger_name   Gender
   ---------------- --------
   Dia              Female
   Jackson          Male
 
-------------------------------------------------------------------------
+---
 
 # 7. Practice - Debug this Query
 
-## Question
+## ❓ Question
 
 Display distinct male passenger names whose origin is Mumbai.
 
@@ -165,7 +165,7 @@ WHERE Gender='Male'
 AND Origin='Mumbai';
 ```
 
-### Output
+### 📤 Output
 
   Passenger_name
   ----------------

@@ -5,7 +5,7 @@
 Module 1 introduces the fundamentals of retrieving data from a database
 using SQL.
 
-------------------------------------------------------------------------
+---
 
 # 1. SELECT Statement
 
@@ -25,7 +25,7 @@ SELECT *
 FROM Flights;
 ```
 
-------------------------------------------------------------------------
+---
 
 # 2. Selecting Specific Columns
 
@@ -38,7 +38,7 @@ FROM Flights;
 
 Advantages: - Faster queries - Less data transferred - Easier to read
 
-------------------------------------------------------------------------
+---
 
 # 3. DISTINCT
 
@@ -59,7 +59,7 @@ With DISTINCT
 
 Mumbai London
 
-------------------------------------------------------------------------
+---
 
 # 4. WHERE Clause
 
@@ -73,7 +73,7 @@ WHERE Origin='Mumbai';
 
 Common operators: - = - != or \<\> - \> - \< - \>= - \<=
 
-------------------------------------------------------------------------
+---
 
 # 5. BETWEEN
 
@@ -95,7 +95,7 @@ WHERE Passenger_name BETWEEN 'A' AND 'D';
 
 `BETWEEN` includes both boundary values.
 
-------------------------------------------------------------------------
+---
 
 # 6. AND Operator
 
@@ -110,7 +110,7 @@ AND Origin='Mumbai';
 
 Both conditions must be true.
 
-------------------------------------------------------------------------
+---
 
 # SQL Keywords Learned
 
@@ -121,7 +121,7 @@ Both conditions must be true.
 -   BETWEEN
 -   AND
 
-------------------------------------------------------------------------
+---
 
 # SQL Syntax Rules
 
@@ -130,7 +130,7 @@ Both conditions must be true.
 -   End statements with a semicolon.
 -   `*` means all columns.
 
-------------------------------------------------------------------------
+---
 
 # Key Takeaways
 

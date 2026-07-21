@@ -8,7 +8,7 @@
 -   Wildcards (`%` and `_`)
 -   Combining Conditions
 
-------------------------------------------------------------------------
+---
 
 # 1. AND Operator
 
@@ -21,7 +21,7 @@ WHERE Gender='Female'
 AND Destination='Cairo';
 ```
 
-------------------------------------------------------------------------
+---
 
 # 2. OR Operator
 
@@ -34,7 +34,7 @@ WHERE Origin='Mumbai'
 OR Destination='Mumbai';
 ```
 
-------------------------------------------------------------------------
+---
 
 # 3. LIKE Operator
 
@@ -62,7 +62,7 @@ Contains 'ork':
 WHERE Origin LIKE '%ork%';
 ```
 
-------------------------------------------------------------------------
+---
 
 ## `_` Wildcard
 
@@ -72,7 +72,7 @@ Represents **exactly one character**.
 WHERE Passenger_id LIKE '1000_';
 ```
 
-------------------------------------------------------------------------
+---
 
 # Combining LIKE with AND
 
@@ -83,7 +83,7 @@ WHERE Destination LIKE '%o'
 AND Origin LIKE 'M%';
 ```
 
-------------------------------------------------------------------------
+---
 
 # SQL Keywords Learned
 
@@ -94,7 +94,7 @@ AND Origin LIKE 'M%';
 -   \%
 -   \_
 
-------------------------------------------------------------------------
+---
 
 # Key Takeaways
 
