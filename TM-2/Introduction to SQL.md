@@ -86,7 +86,7 @@ To resolve this, we connected via the primary system administrator endpoint to p
    ```
 3. **User Account Re-authorization:**
    ```sql
-   ALTER USER C##PREMNAREN IDENTIFIED BY prem4735;
+   ALTER USER C##PREMNAREN IDENTIFIED BY <your_password>;
    ALTER USER hr IDENTIFIED BY hr ACCOUNT UNLOCK;
    ```
 
@@ -140,7 +140,7 @@ Open any fresh command prompt window and use the network string syntax:
 
 * **For Personal Workspace (`C##PREMNAREN`):**
   ```cmd
-  sqlplus C##PREMNAREN/pre4735@localhost:1521/freepdb1
+  sqlplus C##PREMNAREN/<your_password>@localhost:1521/freepdb1
   ```
 * **For Sample Dataset Workspace (`hr`):**
   ```cmd
@@ -151,7 +151,7 @@ Open any fresh command prompt window and use the network string syntax:
 When initializing a database connection profile within SQL Developer, apply the following verified parameters:
 * **Connection Type:** `Basic`
 * **Username:** `C##PREMNAREN` or `hr`
-* **Password:** `prem4735` or `hr`
+* **Password:** `<your_password>` or `hr`
 * **Hostname:** `localhost`
 * **Port:** `1521`
 * **Service Name (Radio Button Checked):** `freepdb1`
