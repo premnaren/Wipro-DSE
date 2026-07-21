@@ -175,4 +175,4 @@ FROM employee;
 
 ---
 
-*SQL Fundamentals · Module 3 · 7 queries*
+*SQL Fundamentals · Module 1 · 7 queries*

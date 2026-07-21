@@ -163,4 +163,4 @@ HAVING COUNT(Department) > 3;
 
 ---
 
-*SQL Fundamentals · Module 4 · 7 queries*
+*SQL Fundamentals · Module 2 · 7 queries*
